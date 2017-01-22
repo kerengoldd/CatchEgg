@@ -7,4 +7,8 @@ A game of egg
  buttttttttt
  if you catche broken egg you fail!!
  
-<img src="/CatchEgg/app/src/main/res/drawable/egg.png" >     
+<img src="/app/src/main/res/drawable/egg.png" width="130" heigth="160">  
+<img src="/app/src/main/res/drawable/1.png" >  
+<img src="/app/src/main/res/drawable/2.png" >  
+<img src="/app/src/main/res/drawable/3.png" >  
+<img src="/app/src/main/res/drawable/4.png" >  
