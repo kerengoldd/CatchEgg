@@ -8,15 +8,31 @@ import android.view.View;
 
 public class start extends AppCompatActivity {
 
+    private InfoDialog infoDialog;
+    private SettingsDialog settingsDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_start);
+        infoDialog = new InfoDialog(this);
+        settingsDialog = new SettingsDialog(this);
     }
-        public void startGame(View view){
-            startActivity(new Intent(getApplicationContext(), main.class));
+
+    public void startGame(View view) {
+        startActivity(new Intent(getApplicationContext(), main.class));
 
     }
+
+    public void openAbout(View view) {
+        infoDialog.show();
+    }
+
+    public void openSettings(View view) {
+        settingsDialog.show();
+    }
+
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
 
@@ -29,4 +45,7 @@ public class start extends AppCompatActivity {
 
         return super.dispatchKeyEvent(event);
     }
+
+
+
 }

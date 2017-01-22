@@ -8,7 +8,8 @@
         android:icon="@drawable/egg"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+
         <activity
             android:name=".start"
             android:screenOrientation="portrait">
@@ -31,7 +32,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".about"></activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="742306618f22b183b565aed297aabe1d5d4f9d2b" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

@@ -5,8 +5,10 @@
     android:id="@+id/activity_result"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
+
     tools:context="com.example.kerengold.catchegg.result"
     android:weightSum="1">
 
@@ -16,7 +18,7 @@
         android:layout_marginBottom="0dp"
         android:layout_width="112dp"
         android:layout_height="20dp"
-        android:id="@+id/buttonBack"
+        android:id="@+id/settingButton"
         android:textSize="18sp"
         android:layout_marginTop="0dp"
         android:layout_weight="0.36"
@@ -29,15 +31,12 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@android:drawable/screen_background_light_transparent"
-        android:text="You need to catch niormal and gold egg try don't touch the broken eggs!!"
+        android:text="You  the broken eggs!!"
         android:textSize="40sp"
         android:layout_marginTop="20dp"
-        android:textColor="#ff0000"
+        android:textColor="@android:color/black"
         android:id="@+id/textView"
         android:autoText="false"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:textAlignment="center"
         android:hint="@android:string/VideoView_error_title"
         style="@style/AppTheme"
         android:textDirection="inherit" />

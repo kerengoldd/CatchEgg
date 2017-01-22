@@ -15,9 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ooopsss... "
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:textSize="60sp"
         android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
+        android:textColor="#f40808"
         android:id="@+id/textView" />
 
     <TextView
@@ -47,7 +49,9 @@
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/black"
+        android:textColor="#7c082f"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         />
 
     <Button
@@ -58,8 +62,10 @@
             android:gravity="center_vertical|center_horizontal|center"
             android:layout_gravity="center_horizontal|bottom"
             android:textSize="18sp"
+            android:background="#f6f175"
             android:layout_marginTop="30dp"
-            android:layout_weight="0.13"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
             android:onClick="tryAgain"
         />
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="#f6f175"
     tools:context="com.example.kerengold.catchegg.main">
 
     <FrameLayout
@@ -19,7 +19,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tap to Start"
-            android:textSize="30sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:textColor="#ff0000"
+            android:textSize="45sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="130dp"/>
 
@@ -49,7 +52,7 @@
 
         <TextView
             android:id="@+id/scoreLabel"
-            android:layout_width="match_parent"
+            android:layout_width="64dp"
             android:layout_height="50dp"
             android:text="score : 300"
             android:textSize="30sp"
@@ -58,7 +61,20 @@
             android:autoText="false"
             android:textStyle="normal|bold" />
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dial"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:onClick="dialogevent"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:background="@android:drawable/ic_media_pause"
+            android:layout_marginLeft="320dp"
+            android:layout_marginRight="0dp"
+            android:padding="0dp" />
     </FrameLayout>
+
 
 </LinearLayout>

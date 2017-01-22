@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by KerenGold on 1/10/17.
@@ -15,6 +17,7 @@ public class splash extends Activity {
     @Override
     protected void onCreate (Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.splash);
 
         final ImageView iv = (ImageView) findViewById(R.id.eggrt);

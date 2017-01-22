@@ -1,9 +1,11 @@
 package com.example.kerengold.catchegg;
 
+import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Point;
-import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,11 +14,11 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -55,7 +57,36 @@ public class main extends AppCompatActivity {
 
     private boolean action_flg = false;
     private boolean start_flg = false;
+    public static Button btn;
 
+
+    public void dialogevent(View view){
+
+        btn = (Button)findViewById(R.id.dial);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder altdial = new AlertDialog.Builder(main.this);
+                altdial.setMessage("Do you want to Quit this app ???").setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert = altdial.create();
+                alert.setTitle("Dialog Header");
+                alert.show();
+
+            }
+        });}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,29 +101,31 @@ public class main extends AppCompatActivity {
         egg = (ImageView) findViewById(R.id.goldegg);
         brokenegg = (ImageView) findViewById(R.id.brokenegg);
 
-        WindowManager wm = getWindowManager();
-        Display disp = wm.getDefaultDisplay();
-        Point size = new Point();
-        disp.getSize(size);
 
-        screenWidth = size.x;
-        screenHeight = size.y;
+            WindowManager wm = getWindowManager();
+            Display disp = wm.getDefaultDisplay();
+            Point size = new Point();
+            disp.getSize(size);
 
-        handSpeed = Math.round(screenHeight/60F);
-        eggSpeed = Math.round(screenWidth/60F);
-        goldeggSpeed = Math.round(screenWidth/36F);
-        brokeneggSpeed = Math.round(screenWidth/45F);
+            screenWidth = size.x;
+            screenHeight = size.y;
+
+            handSpeed = Math.round(screenHeight / 80F);
+            eggSpeed = Math.round(screenWidth / 80F);
+            goldeggSpeed = Math.round(screenWidth / 76F);
+            brokeneggSpeed = Math.round(screenWidth / 65F);
 
 
-        egg.setX(-80);
-        egg.setY(-80);
-        goldegg.setX(-80);
-        goldegg.setY(-80);
-        brokenegg.setX(-80);
-        brokenegg.setY(-80);
-        scoreLabel.setText("score : 0");
+            egg.setX(-80);
+            egg.setY(-80);
+            goldegg.setX(-80);
+            goldegg.setY(-80);
+            brokenegg.setX(-80);
+            brokenegg.setY(-80);
+            scoreLabel.setText("score : 0");
 
-    }
+        }
+
 
     public void changePos() {
 
@@ -210,13 +243,14 @@ public class main extends AppCompatActivity {
         }
         return true;
     }
+
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
 
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
-                    return true;
+                    return false;
             }
         }
 

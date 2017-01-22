@@ -9,23 +9,39 @@
     android:orientation="vertical"
      tools:context="com.example.kerengold.catchegg.start">
 
+    <Button
+        android:layout_height="60dp"
+        android:layout_marginTop="0dp"
+        android:onClick="openSettings"
+        android:id="@+id/settingButton"
+        android:layout_marginLeft="-160dp"
+        android:elevation="24dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/sett"
+        android:layout_width="60dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Eggs"
-        android:textSize="60sp"
-        android:layout_marginTop="35dp"
-        android:textColor="?android:attr/colorPressedHighlight"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textSize="80sp"
+        android:layout_marginTop="3dp"
+        android:textColor="#e78000"
         android:id="@+id/textView3"
-        android:background="@android:drawable/alert_dark_frame" />
+         />
 
     <TableLayout
         android:layout_width="290dp"
         android:layout_height="234dp">
+
         <TableRow
             android:gravity="center_vertical"
             android:layout_marginTop="10dp">
             <TextView
+                android:fontFamily="cursive"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
@@ -48,6 +64,8 @@
             android:layout_marginTop="20dp"
             >
             <TextView
+                android:fontFamily="cursive"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
@@ -70,6 +88,8 @@
             android:layout_marginTop="20dp">
 
             <TextView
+                android:fontFamily="cursive"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
@@ -94,11 +114,12 @@
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:text="Start"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:layout_marginTop="0dp"
         android:onClick="startGame"
         android:id="@+id/button"
-        android:background="@android:drawable/star_big_on"
-        android:elevation="9dp"
+        android:background="@drawable/egg"
         style="@style/Widget.AppCompat.Button"
         android:visibility="visible" />
 
@@ -106,11 +127,12 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="0dp"
-        android:onClick="about"
+        android:onClick="openAbout"
         android:id="@+id/about"
         android:layout_marginLeft="150dp"
         android:elevation="24dp"
         android:layout_weight="1"
         style="@style/Widget.AppCompat.Button"
         android:background="@android:drawable/ic_menu_info_details" />
+
 </LinearLayout>
