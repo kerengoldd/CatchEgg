@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context="com.example.kerengold.catchegg.main">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/startLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to Start"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"/>
+
+        <ImageView
+            android:id="@+id/egg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/egg"/>
+        <ImageView
+            android:id="@+id/brokenegg"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:src="@drawable/brokenegg"/>
+
+        <ImageView
+            android:id="@+id/hand"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:src="@drawable/hand"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:id="@+id/goldegg"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:src="@drawable/goldegg"/>
+
+        <TextView
+            android:id="@+id/scoreLabel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="score : 300"
+            android:textSize="30sp"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:autoText="false"
+            android:textStyle="normal|bold" />
+
+
+    </FrameLayout>
+
+</LinearLayout>

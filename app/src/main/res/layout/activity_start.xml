@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_start"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
+     tools:context="com.example.kerengold.catchegg.start">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Eggs"
+        android:textSize="60sp"
+        android:layout_marginTop="35dp"
+        android:textColor="?android:attr/colorPressedHighlight"
+        android:id="@+id/textView3"
+        android:background="@android:drawable/alert_dark_frame" />
+
+    <TableLayout
+        android:layout_width="290dp"
+        android:layout_height="234dp">
+        <TableRow
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Normal - 10p "
+                android:textColor="@color/colorPrimary"
+                android:paddingRight="7dp"
+
+                android:autoText="false"
+                android:contextClickable="false"
+                android:background="@android:drawable/toast_frame" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/egg"
+
+                />
+        </TableRow>
+        <TableRow
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Gold Egg - 30p "
+                android:textColor="@color/colorPrimary"
+                android:paddingRight="7dp"
+                android:autoText="false"
+                android:contextClickable="false"
+                android:background="@android:drawable/toast_frame"
+
+               />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/goldegg"
+                />
+        </TableRow>
+        <TableRow  android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Broken Egg "
+                android:textColor="#ff0000"
+                android:paddingRight="7dp"
+                android:autoText="false"
+                android:contextClickable="false"
+                android:background="@android:drawable/toast_frame"
+             />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:src="@drawable/brokenegg"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:text="Start"
+        android:layout_marginTop="0dp"
+        android:onClick="startGame"
+        android:id="@+id/button"
+        android:background="@android:drawable/star_big_on"
+        android:elevation="9dp"
+        style="@style/Widget.AppCompat.Button"
+        android:visibility="visible" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="0dp"
+        android:onClick="about"
+        android:id="@+id/about"
+        android:layout_marginLeft="150dp"
+        android:elevation="24dp"
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@android:drawable/ic_menu_info_details" />
+</LinearLayout>
