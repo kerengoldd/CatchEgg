@@ -7,4 +7,4 @@ A game of egg
  buttttttttt
  if you catche broken egg you fail!!
  
- egg.png
+<img src="/images/egg.png" >     
