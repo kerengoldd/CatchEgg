@@ -1,44 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_result"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:gravity="center"
+    android:layout_width="400dp"
     android:orientation="vertical"
+    android:layout_height="500dp"
+    android:background="@drawable/background">
 
-    tools:context="com.example.kerengold.catchegg.result"
-    android:weightSum="1">
-
-
-    <Button
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_width="112dp"
-        android:layout_height="20dp"
-        android:id="@+id/settingButton"
-        android:textSize="18sp"
-        android:layout_marginTop="0dp"
-        android:layout_weight="0.36"
-        android:onClick="closeInfo"
-        android:background="@android:drawable/ic_delete" />
+    <Switch
+        android:text="Sound"
+        android:layout_width="137dp"
+        android:layout_height="53dp"
+        android:id="@+id/switchSound"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:fontFamily="cursive"
+        android:textSize="29sp"
+        android:textColor="@android:color/black"
+        android:elevation="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@android:drawable/screen_background_light_transparent"
-        android:text="You  the broken eggs!!"
-        android:textSize="40sp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/txt_dia"
+        android:layout_width="212dp"
+        android:layout_height="35dp"
+        android:text="Settings"
+        android:textSize="30sp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:id="@+id/textView"
-        android:autoText="false"
-        android:hint="@android:string/VideoView_error_title"
-        style="@style/AppTheme"
-        android:textDirection="inherit" />
+        android:textAllCaps="true"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <ImageButton
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        app:srcCompat="@drawable/goldegg"
+        android:onClick="closeDialog"
+        android:id="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:color/transparent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp" />
+
+    <SeekBar
+        android:layout_width="288dp"
+        android:layout_height="49dp"
+        android:id="@+id/seekbar1"
+        android:max="100"
+        android:progress="1"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dia"
+        app:layout_constraintLeft_toRightOf="@+id/textView" />
+
+    <TextView
+        android:text="Music"
+        android:layout_width="92dp"
+        android:layout_height="43dp"
+        android:id="@+id/textView"
+        android:fontFamily="cursive"
+        android:textSize="29sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="96dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+</android.support.constraint.ConstraintLayout>
+

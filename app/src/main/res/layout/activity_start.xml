@@ -11,7 +11,7 @@
 
     <Button
         android:layout_height="60dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="7dp"
         android:onClick="openSettings"
         android:id="@+id/settingButton"
         android:layout_marginLeft="-160dp"
@@ -22,11 +22,11 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="87dp"
         android:text="My Eggs"
         android:fontFamily="cursive"
         android:textStyle="bold"
-        android:textSize="80sp"
+        android:textSize="70sp"
         android:layout_marginTop="3dp"
         android:textColor="#e78000"
         android:id="@+id/textView3"
@@ -34,11 +34,11 @@
 
     <TableLayout
         android:layout_width="290dp"
-        android:layout_height="234dp">
+        android:layout_height="214dp">
 
         <TableRow
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="0dp">
             <TextView
                 android:fontFamily="cursive"
                 android:textStyle="bold"
@@ -112,11 +112,11 @@
 
     <Button
         android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_height="180dp"
         android:text="Start"
         android:fontFamily="cursive"
         android:textStyle="bold"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:onClick="startGame"
         android:id="@+id/button"
         android:background="@drawable/egg"
@@ -124,15 +124,14 @@
         android:visibility="visible" />
 
     <Button
-        android:layout_width="70dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="15dp"
         android:onClick="openAbout"
         android:id="@+id/about"
-        android:layout_marginLeft="150dp"
-        android:elevation="24dp"
+        android:layout_marginLeft="160dp"
         android:layout_weight="1"
         style="@style/Widget.AppCompat.Button"
-        android:background="@android:drawable/ic_menu_info_details" />
+        android:background="@drawable/info" />
 
 </LinearLayout>

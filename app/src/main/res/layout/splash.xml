@@ -18,7 +18,7 @@
             android:id="@+id/startLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hata Hata present:"
+            android:text="KNG present:"
             android:textSize="40sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"

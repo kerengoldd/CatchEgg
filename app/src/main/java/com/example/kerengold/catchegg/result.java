@@ -7,14 +7,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 public class result extends AppCompatActivity {
+    private start start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView yourscore = (TextView) findViewById(R.id.yourscore);
         TextView highscorelabel = (TextView) findViewById(R.id.highscorelabel);
@@ -35,6 +38,11 @@ public class result extends AppCompatActivity {
             highscorelabel.setText("High score : " + highscore);
         }
     }
+
+    public void start(View view) {
+        startActivity(new Intent(getApplicationContext(), start.class));
+    }
+
 
     public void tryAgain(View view){
         startActivity(new Intent(getApplicationContext(), main.class));

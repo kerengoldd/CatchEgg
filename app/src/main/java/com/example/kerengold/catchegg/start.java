@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 public class start extends AppCompatActivity {
 
@@ -18,6 +19,8 @@ public class start extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         infoDialog = new InfoDialog(this);
         settingsDialog = new SettingsDialog(this);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
     }
 
     public void startGame(View view) {

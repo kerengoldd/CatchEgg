@@ -11,13 +11,25 @@
     tools:context="com.example.kerengold.catchegg.result"
     android:weightSum="1">
 
+    <Button
+
+        android:layout_height="60dp"
+        android:layout_marginTop="7dp"
+        android:onClick="start"
+        android:id="@+id/backButton"
+        android:layout_marginLeft="-160dp"
+        android:elevation="24dp"
+        style="?attr/actionButtonStyle"
+        android:background="@drawable/back"
+        android:layout_width="60dp" />
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:text="Ooopsss... "
         android:fontFamily="cursive"
         android:textStyle="bold"
-        android:textSize="60sp"
+        android:textSize="50sp"
         android:layout_marginTop="20dp"
         android:textColor="#f40808"
         android:id="@+id/textView" />
@@ -34,16 +46,19 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
+        android:maxHeight="150dp"
         app:srcCompat="@drawable/sadegg"
         android:id="@+id/sadegg"
+        android:layout_margin="0dp"
         android:adjustViewBounds="false"
-        android:layout_gravity="center_horizontal" />
+        android:gravity="center_vertical"
+        />
 
     <TextView
         android:id="@+id/highscorelabel"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="High Score : 300 "
         android:textSize="35sp"
         android:layout_marginTop="30dp"
@@ -55,14 +70,13 @@
         />
 
     <Button
-            android:text="Try Again"
-            android:layout_width="200dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonTry"
             android:gravity="center_vertical|center_horizontal|center"
             android:layout_gravity="center_horizontal|bottom"
             android:textSize="18sp"
-            android:background="#f6f175"
+            android:background="@drawable/trybutt"
             android:layout_marginTop="30dp"
             android:fontFamily="cursive"
             android:textStyle="bold"

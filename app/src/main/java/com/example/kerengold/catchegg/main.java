@@ -71,7 +71,10 @@ public class main extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                finish();
+                                timer.cancel();
+                                timer = null;
+                                startActivity(new Intent(getApplicationContext(), start.class));
+
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -82,7 +85,7 @@ public class main extends AppCompatActivity {
                         });
 
                 AlertDialog alert = altdial.create();
-                alert.setTitle("Dialog Header");
+                alert.setTitle("Finish Game");
                 alert.show();
 
             }
@@ -91,6 +94,7 @@ public class main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         sound = new sound(this);
 

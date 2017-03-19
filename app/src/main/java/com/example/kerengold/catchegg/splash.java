@@ -3,6 +3,7 @@ package com.example.kerengold.catchegg;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ public class splash extends Activity {
         super.onCreate(saveInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.splash);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         final ImageView iv = (ImageView) findViewById(R.id.eggrt);
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);

@@ -52,10 +52,10 @@
 
         <TextView
             android:id="@+id/scoreLabel"
-            android:layout_width="64dp"
+            android:layout_width="94dp"
             android:layout_height="50dp"
             android:text="score : 300"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:paddingLeft="10dp"
             android:gravity="center_vertical"
             android:autoText="false"
