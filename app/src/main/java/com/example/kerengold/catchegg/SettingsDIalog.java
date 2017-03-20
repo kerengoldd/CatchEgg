@@ -1,23 +1,32 @@
 package com.example.kerengold.catchegg;
 
-import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
 import android.view.Window;
-import android.widget.Button;
+import android.view.WindowManager;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 /**
  * Created by KerenGold on 2/28/17.
  */
 
-public class SettingsDialog extends Dialog implements android.view.View.OnClickListener{
-    public Activity c;
-    public Button quitButton;
+    public class SettingsDialog extends Dialog {
 
-    public SettingsDialog(Activity a) {
-        super(a);
-        this.c = a;
+    SeekBar seekBar;
+
+    MediaPlayer mp;
+
+    Handler handler;
+
+    Runnable run;
+
+    public SettingsDialog(Context context) {
+        super(context);
     }
 
     @Override
@@ -25,19 +34,83 @@ public class SettingsDialog extends Dialog implements android.view.View.OnClickL
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.settings);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        quitButton = (Button) findViewById(R.id.settingButton);
-        quitButton.setOnClickListener(this);
+        handler = new Handler();
+
+        seekBar = (SeekBar) findViewById(R.id.seekbar1);
+        mp = MediaPlayer.create(getContext(), R.raw.ss);
+        mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+        seekBar.setMax(mp.getDuration());
+
+        mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                seekBar.setMax(mp.getDuration());
+                playcycle();
+                mp.start();
+            }
+        });
+
+
+        seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progrss, boolean input) {
+                if (input) {
+                    mp.seekTo(progrss);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.buttonBack:
-                dismiss();
-                break;
-            default:
-                break;
+    public void playcycle() {
+        seekBar.setProgress(mp.getCurrentPosition());
+
+        if (mp.isPlaying()) {
+            run = new Runnable() {
+                @Override
+                public void run() {
+                    playcycle();
+                }
+            };
+            handler.postDelayed(run, 1000);
         }
-    }
+
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        mp.start();
+//
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        mp.stop();
+//
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mp.release();
+//        handler.removeCallbacks(run);
+//
+//    }
+}
+
+
+
 }
